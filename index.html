@@ -191,11 +191,14 @@
     .main-image {
         display: flex;
         justify-content: center;
+        animation: slideTop 1s ease forwards;
     }
 
     .main-image img {
         max-width: 100%;
         height: auto;
+        filter: drop-shadow(0 20px 25px rgba(0, 238, 255, 1));
+        animation: bottomGlow 2.5s ease-in-out infinite;
     }
 
     .home-content h3 {
@@ -354,54 +357,88 @@
             opacity: 1;
         }
     }
-
-
-
-
-
-
-
-
-    .about {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        gap: 1.5rem;
+    @keyframes bottomGlow {
+    0%, 100% {
+        filter: drop-shadow(0 20px 25px rgba(0, 238, 255, 0.6));
     }
-
-    .about-img img {
-        padding-bottom: 20%;
-        max-width: 590px;
-        height: auto;
-        width: 100%;
-        border-radius: 8px;
+    50% {
+        filter: drop-shadow(0 20px 45px rgba(0, 238, 255, 1));
     }
+}
 
-    .about-text h2 {
-        font-size: 60px;
+
+
+
+
+
+
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-img {
+    position: relative; /* For positioning the hexagon */
+}
+
+.about-img img {
+    padding-bottom: 20%;
+    max-width: 590px;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about-img::before {
+    content: '\2B21'; /* Hexagon symbol */
+    font-size: 700px; /* Adjust size of the hexagon */
+    color: #0ef; /* Hexagon color */
+    filter: drop-shadow(0 5px 40px rgba(0, 238, 255, 1));
+    position: absolute;
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    animation: rotateHex 3s linear infinite;
+    z-index: -1; /* Ensure hexagon is above image */
+}
+
+/* Keyframe for rotating the hexagon */
+@keyframes rotateHex {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
     }
-
-    .about-text h2 span {
-        color: #0ef;
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
+}
 
-    .about-text h4 {
-        font-size: 29px;
-        font-weight: 600;
-        color: #fff;
-        line-height: 1.7;
-        margin: 15px 0 30px;
-    }
+.about-text h2 {
+    font-size: 60px;
+}
 
-    .about-text p {
-        color: aliceblue;
-        font-size: 20px;
-        line-height: 1.4;
-        margin-bottom: 4rem;
-    }
+.about-text h2 span {
+    color: #0ef;
+}
 
+.about-text h4 {
+    font-size: 29px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
 
-    @media (max-width: 768px) {
+.about-text p {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
     .about {
         grid-template-columns: 1fr;
         text-align: center;
@@ -427,7 +464,16 @@
         font-size: 16px;
         margin-bottom: 2rem;
     }
+    .about-img::before {
+        font-size: 430px;
+        top:48%; /* Reduce the size of the hexagon */
+        left:50%;
+    }
 }
+
+
+
+
 
 
 
@@ -964,38 +1010,28 @@
     }
 
 
-.last-text p {
-    width: 100%;
-    text-align: center;
-    padding: 25px 0;
-    background: rgb(7, 85, 91);
-    color: white; /* Added for better visibility */
-    font-weight: 300;
-    margin-top: 70px;
-    font-size: 1rem;
-}
+    .last-text p {
+        width: 100%;
+        text-align: center;
+        padding: 25px 0;
+        background: rgb(7, 85, 91);
+        font-weight: 300;
+        margin-top: 70px;
+    }
 
-.top {
-    position: fixed;
-    bottom: 2.1rem;
-    right: 2.1rem; /* Fixed the typo from "2, 1rem" */
-    z-index: 1000;
-}
+    .top {
+        position: fixed;
+        bottom: 2.1rem;
+        right: 2, 1rem;
+    }
 
-.top i {
-    color: #000;
-    background: #0ef;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 0.5rem;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.top:hover i {
-    background: #00c4ff;
-    transform: translateY(-5px);
-}
-
+    .top i {
+        color: #000;
+        background: #0ef;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 0.5rem;
+    }
 
 
 
@@ -1129,22 +1165,22 @@
                     more....
                 </p>
                 <div class="home-sci">
-                    <a style="--i:7"><i class='bx bxl-facebook'></i></a>
-                    <a style="--i:8"><i class='bx bxl-instagram'></i></a>
-                    <a  style="--i:9"><i class='bx bxl-whatsapp'></i></a>
-                    <a style="--i:10"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" style="--i:7"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" style="--i:8"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="#" style="--i:10"><i class='bx bxl-twitter'></i></a>
                 </div>
-                <a href="" class="btn-box">More About Me</a>
+                <a href="#" class="btn-box">More About Me</a>
             </div>
             <div class="main-image">
-                <img src="images/img3.png" alt="Anto Kochumon">
+                <img src="images/anto image1.png" alt="Anto Kochumon">
             </div>
         </div>
     </section>
 
     <section class="about" id="about">
         <div class="about-img">
-            <img src="images/img 2.jfif">
+            <img src="images/anto image1.png">
         </div>
         <div class="about-text">
             <h2>About <span>Me</span></h2>
@@ -1178,7 +1214,7 @@
 
                     <!-- Box 2 -->
                     <div>
-                        <i class='bx bxs-data' style='color:#00ffff'></i>
+                        <i class='bx bxs-crop' style='color:#00ffff'></i>
                         <h2>BackEnd Development</h2>
                         <p>I offer backend development services specializing in Node.js, Express, and MongoDB. Whether you're building a web app, e-commerce platform, or custom API, I can create secure, scalable, and efficient server-side solutions. My focus is on clean code, fast performance, and seamless integration with front-end systems to deliver a smooth user experience.</p>
                         <a href="#" class="read">Learn more</a>
@@ -1186,7 +1222,7 @@
 
                     <!-- Box 3 -->
                     <div>
-                        <i class='bx bx-globe' style='color:#00ffff'></i>
+                        <i class='bx bxl-apple' style='color:#00ffff'></i>
                         <h2>Web Development</h2>
                         <p>I provide complete web development services, creating both static and dynamic websites tailored to your needs. Whether it's a personal portfolio, business site, blog, or a fully functional web application, I ensure responsive design, user-friendly interfaces, and optimized performance. From concept to deployment, I bring your ideas to life with clean, modern, and reliable code.</p>
                         <a href="#" class="read">Learn more</a>
@@ -1304,7 +1340,7 @@
                             <img src="images/ck_tech_new_logo-removebg-preview.png" alt="CK Tech ">
                             <div class="layer">
                                 <h5>CK tech</h5>
-                                <a href="https://antokochumon.github.io/cktech"><i class="bx bx-link-external" style="color: black;"></i></a>
+                                <a href="#"><i class="bx bx-link-external" style="color: aliceblue;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1314,7 +1350,7 @@
                             <img src="images/Screenshot 2025-04-15 164812.png" alt="Shopping Cart">
                             <div class="layer">
                                 <h5>Shopping Cart</h5>
-                                <a href="https://cart-rcnw.onrender.com/"><i class="bx bx-link-external" style="color: black;"></i></a>
+                                <a href="#"><i class="bx bx-link-external" style="color: aliceblue;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1324,7 +1360,7 @@
                             <img src="images/tic-tac-toe.png" alt="xox" style="width:100%; height: 200px;">
                             <div class="layer">
                                 <h5>Tic-Tac-Toe Game</h5>
-                                <a href="https://antokochumon.github.io/Tic-Tac-Toe"><i class="bx bx-link-external" style="color: black;"></i></a>
+                                <a href="#"><i class="bx bx-link-external" style="color: aliceblue;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1345,10 +1381,10 @@
                 <li><i class='bx bxs-phone'></i> 07407266345</li>
             </div>
             <div class="contact-icons">
-                <a ><i class='bx bxl-facebook-circle'></i></a>
-                <a ><i class='bx bxl-twitter'></i></a>
-                <a ><i class='bx bxl-instagram'></i></a>
-                <a ><i class='bx bxl-whatsapp'></i></a>
+                <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-whatsapp'></i></a>
             </div>
         </div>
 
@@ -1366,10 +1402,10 @@
 
 
 
-    <div class="last-text">
-    <p>Designed and Developed by Anto Kochumon © 2025</p>
-</div>
-<a href="#" class="top"><i class='bx bxs-up-arrow-alt'></i></a>
+    <div class="last-test">
+        <p>Designed and Developed by Anto kochumon © 2025</p>
+    </div>
+    <a href="#" class="top"><i class='bx bxs-up-arrow-alt'></i></a>
 
     <script>
         var typed = new Typed(".text", {
