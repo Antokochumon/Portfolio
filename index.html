@@ -140,14 +140,16 @@
         }
     }
 
-    /* Home Section - UPDATED FOR MOBILE */
+    /* Home Section - UPDATED WITH OLD PORTFOLIO IMAGE STYLING */
     .home {
         position: relative;
         width: 100%;
         min-height: 100vh;
+        background-size: cover;
+        background-position: center;
         display: flex;
         align-items: center;
-        padding: 100px 10% 0;
+        padding: 70px 10% 0;
     }
 
     .home-container {
@@ -266,37 +268,38 @@
         order: 2; /* Default for desktop - image on right */
     }
 
+    /* OLD PORTFOLIO MAIN IMAGE STYLING */
     .main-image img {
         max-width: 100%;
         height: auto;
-        border-radius: 20px;
-        box-shadow: 0 0 50px var(--primary);
-        animation: floatImage 4s ease-in-out infinite;
+        filter: drop-shadow(0 20px 25px rgba(0, 238, 255, 1));
+        animation: bottomGlow 2.5s ease-in-out infinite;
     }
 
-    /* About Section */
+    /* About Section - UPDATED WITH OLD PORTFOLIO IMAGE STYLING */
     .about {
         padding: 100px 10%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
-        gap: 4rem;
+        gap: 1.5rem;
     }
 
     .about-img {
-        position: relative;
-        text-align: center;
+        position: relative; /* For positioning the hexagon */
     }
 
+    /* OLD PORTFOLIO ABOUT IMAGE STYLING */
     .about-img img {
-        max-width: 100%;
+        padding-bottom: 20%;
+        max-width: 590px;
         height: auto;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        border-radius: 8px;
     }
 
     .about-text h2 {
-        font-size: 48px;
+        font-size: 60px;
         margin-bottom: 20px;
     }
 
@@ -305,16 +308,18 @@
     }
 
     .about-text h4 {
-        font-size: 24px;
+        font-size: 29px;
         font-weight: 600;
-        color: var(--primary);
-        margin-bottom: 15px;
+        color: #fff;
+        line-height: 1.7;
+        margin: 15px 0 30px;
     }
 
     .about-text p {
-        font-size: 16px;
-        line-height: 1.8;
-        margin-bottom: 30px;
+        color: aliceblue;
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 4rem;
     }
 
     /* Services Section */
@@ -324,8 +329,8 @@
 
     .sub-title {
         text-align: center;
-        font-size: 48px;
-        margin-bottom: 70px;
+        font-size: 60px;
+        padding-bottom: 70px;
     }
 
     .sub-title span {
@@ -334,31 +339,29 @@
 
     .services-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 50px;
     }
 
     .services-list div {
-        background: var(--card-bg);
-        padding: 40px 30px;
+        background-color: transparent;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 500;
         border-radius: 20px;
-        text-align: center;
-        transition: transform 0.5s;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: background 0.5s, transform 0.5s;
+        box-shadow: 1px 1px 20px #012290f7,
+            1px 1px 40px #0053b8f7;
     }
 
     .services-list div i {
         font-size: 50px;
-        margin-bottom: 20px;
-        background: var(--gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        margin-bottom: 30px;
     }
 
     .services-list div h2 {
-        font-size: 24px;
+        font-size: 30px;
+        font-weight: 500;
         margin-bottom: 15px;
     }
 
@@ -389,7 +392,6 @@
 
     .services-list div:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 238, 255, 0.2);
     }
 
     /* Skills Section */
@@ -404,7 +406,7 @@
     }
 
     .skills-title {
-        font-size: 48px;
+        font-size: 60px;
         margin-bottom: 70px;
         text-align: center;
         grid-column: 1 / -1;
@@ -518,14 +520,19 @@
         font-weight: 600;
     }
 
-    /* Portfolio Section */
+    /* Portfolio Section - UPDATED WITH OLD PORTFOLIO PROJECT STYLING */
     .portfolio {
         padding: 100px 10%;
     }
 
+    .main-text {
+        padding-top: 120px;
+        margin-top: 20px;
+    }
+
     .main-text h2 {
-        font-size: 48px;
-        margin-bottom: 70px;
+        font-size: 60px;
+        margin-bottom: 80px;
         line-height: 1;
         text-align: center;
     }
@@ -534,50 +541,49 @@
         color: var(--primary);
     }
 
+    /* OLD PORTFOLIO PROJECT GRID LAYOUT */
     .portfolio-wrapper {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
     }
 
     .portfolio-content {
-        position: relative;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        transition: transform 0.5s;
+        width: 100%;
     }
 
+    .row {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    /* OLD PORTFOLIO PROJECT IMAGE STYLING */
     .row img {
         width: 100%;
-        height: 250px;
-        object-fit: cover;
+        border-radius: 8px;
+        display: block;
         transition: transform 0.5s;
     }
 
     .layer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.1), var(--primary));
+        height: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), #0ef);
+        position: absolute;
+        border-radius: 8px;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         text-align: center;
         padding: 0 40px;
-        transform: translateY(100%);
-        transition: transform 0.5s;
-    }
-
-    .portfolio-content:hover .layer {
-        transform: translateY(0);
-    }
-
-    .portfolio-content:hover img {
-        transform: scale(1.1);
+        transition: height 0.5s;
     }
 
     .layer h5 {
@@ -597,13 +603,14 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        transition: 0.5s;
     }
 
-    .layer i:hover {
-        background: var(--secondary);
-        color: #fff;
+    .row:hover img {
         transform: scale(1.1);
+    }
+
+    .row:hover .layer {
+        height: 100%;
     }
 
     /* YOUR ORIGINAL CONTACT SECTION - PRESERVED EXACTLY */
@@ -844,6 +851,16 @@
         }
     }
 
+    /* OLD PORTFOLIO BOTTOM GLOW ANIMATION */
+    @keyframes bottomGlow {
+        0%, 100% {
+            filter: drop-shadow(0 20px 25px rgba(0, 238, 255, 0.6));
+        }
+        50% {
+            filter: drop-shadow(0 20px 45px rgba(0, 238, 255, 1));
+        }
+    }
+
     /* Scroll Animation */
     .scroll-animate {
         opacity: 0;
@@ -919,7 +936,16 @@
         }
         
         .about-text h2 {
-            font-size: 36px;
+            font-size: 40px;
+        }
+        
+        .about-text h4 {
+            font-size: 22px;
+        }
+        
+        .about-text p {
+            font-size: 16px;
+            margin-bottom: 2rem;
         }
         
         .services-list, .portfolio-wrapper {
@@ -928,6 +954,20 @@
         
         .radial-container {
             grid-template-columns: 1fr;
+        }
+        
+        /* OLD PORTFOLIO MOBILE STYLES FOR PROJECTS */
+        .layer {
+            padding: 0 20px;
+        }
+
+        .layer h5 {
+            font-size: 18px;
+        }
+
+        .layer i {
+            width: 50px;
+            height: 50px;
         }
     }
 
@@ -961,6 +1001,13 @@
         
         .services-list div, .technical-skills, .professional-skills {
             padding: 30px 20px;
+        }
+        
+        .about-img img {
+            padding-bottom: 0;
+            max-width: 100%;
+            width: 90%;
+            margin: 0 auto 20px;
         }
     }
 </style>
@@ -1156,7 +1203,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section with Old Portfolio Project Styling -->
     <section class="portfolio" id="portfolio">
         <div class="main-text">
             <h2 class="scroll-animate">Latest&nbsp;<span>Projects</span></h2>
