@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anto Kochumon - Portfolio</title>
-
     <link rel="icon" href="image/Anto-modified.png" type="image/jpeg">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <style>
     :root {
         --primary: #0ef;
@@ -117,14 +113,14 @@
         left: 0;
         width: 100%;
         padding: 20px 10%;
-        background: rgba(8, 27, 41, 0.85); /* Darker, sophisticated transparent bg */
-        backdrop-filter: blur(15px); /* Strong glass effect */
+        background: rgba(8, 27, 41, 0.85);
+        backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         display: flex;
         justify-content: space-between;
         align-items: center;
         z-index: 100;
-        border-bottom: 1px solid rgba(0, 238, 255, 0.1); /* Subtle neon line */
+        border-bottom: 1px solid rgba(0, 238, 255, 0.1);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         transition: 0.3s;
     }
@@ -149,24 +145,23 @@
 
     .navbar {
         display: flex;
-        gap: 35px; /* Better spacing than margin-left */
+        gap: 35px;
     }
 
     .navbar a {
         display: inline-block;
-        font-size: 18px; /* Refined size */
+        font-size: 18px;
         color: #fff;
         text-decoration: none;
         font-weight: 500;
         opacity: 0;
         animation: slideTop .5s ease forwards;
         animation-delay: calc(.2s * var(--i));
-        position: relative; /* For pseudo-element */
+        position: relative;
         padding: 5px 0;
         transition: 0.3s;
     }
 
-    /* Animated Underline & Glow Effect */
     .navbar a::after {
         content: '';
         position: absolute;
@@ -190,7 +185,6 @@
         text-shadow: 0 0 20px var(--primary);
     }
 
-    /* Hamburger Menu Styling */
     .hamburger {
         display: none;
         cursor: pointer;
@@ -198,7 +192,7 @@
         height: 24px;
         flex-direction: column;
         justify-content: space-between;
-        z-index: 101; /* Above navbar */
+        z-index: 101;
     }
 
     .hamburger span {
@@ -211,7 +205,6 @@
         box-shadow: 0 0 5px rgba(0,0,0,0.5);
     }
 
-    /* Active Hamburger State (X shape) */
     .hamburger.active span:nth-child(1) {
         transform: translateY(10.5px) rotate(45deg);
         background: var(--primary);
@@ -229,10 +222,9 @@
         box-shadow: 0 0 10px var(--primary);
     }
 
-    /* Responsive Styles */
     @media (max-width: 991px) {
         .header {
-            padding: 20px 5%; /* Tighter padding on smaller screens */
+            padding: 20px 5%;
         }
     }
 
@@ -244,11 +236,11 @@
         .navbar {
             position: fixed;
             top: 0;
-            right: -100%; /* Hidden by default */
-            width: 70%; /* Covers mostly right side */
+            right: -100%;
+            width: 70%;
             height: 100vh;
-            background: rgba(5, 17, 41, 0.95); /* Deep semi-transparent blue */
-            backdrop-filter: blur(20px); /* Heavy blur for readability */
+            background: rgba(5, 17, 41, 0.95);
+            backdrop-filter: blur(20px);
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -267,18 +259,16 @@
             display: block;
             font-size: 24px;
             margin: 10px 0;
-            transform: translateX(50px); /* Start slightly off */
-            opacity: 0; /* Hidden initially */
+            transform: translateX(50px);
+            opacity: 0;
             transition: 0.4s ease;
         }
 
-        /* Staggered animation when menu opens */
         .navbar.active a {
             transform: translateX(0);
             opacity: 1;
         }
         
-        /* Delays for mobile links */
         .navbar.active a:nth-child(1) { transition-delay: 0.1s; }
         .navbar.active a:nth-child(2) { transition-delay: 0.2s; }
         .navbar.active a:nth-child(3) { transition-delay: 0.3s; }
@@ -286,7 +276,6 @@
         .navbar.active a:nth-child(5) { transition-delay: 0.5s; }
         .navbar.active a:nth-child(6) { transition-delay: 0.6s; }
     }
-    /* ------------------------------------------- */
 
     /* Home Section */
     .home {
@@ -492,7 +481,7 @@
     }
 
     .services-list div {
-        background: rgba(255, 255, 255, 0.05); /* Glass effect */
+        background: rgba(255, 255, 255, 0.05);
         padding: 40px 30px;
         font-size: 13px;
         font-weight: 500;
@@ -652,7 +641,6 @@
         transition: width 1.5s ease-in-out;
     }
 
-    /* Modern Radial Bars */
     .radial-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -702,7 +690,7 @@
     }
 
     /* ------------------------------------------- */
-    /* NEW MODERN RESPONSIVE STYLES FOR PORTFOLIO */
+    /* PORTFOLIO SECTION — RESPONSIVE GRID, FULL IMAGES, NO CROPPING */
     /* ------------------------------------------- */
     .portfolio {
         padding: 100px 10%;
@@ -757,17 +745,19 @@
         text-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
     }
 
-    /* Responsive Grid Layout */
+    /* RESPONSIVE GRID - uses auto-fit with minmax for perfect wrapping */
     .portfolio-wrapper {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 26px;
         padding: 20px 0;
         perspective: 1200px;
+        width: 100%;
     }
 
     .portfolio-content {
         width: 100%;
+        min-width: 0; /* prevents overflow in grid */
     }
 
     .portfolio-content.scroll-animate.animate .row {
@@ -797,7 +787,8 @@
         transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         background: linear-gradient(160deg, rgba(8, 27, 41, 0.95), rgba(11, 39, 58, 0.85));
         backdrop-filter: blur(8px);
-        aspect-ratio: 16/10;
+        /* Fixed aspect ratio keeps ALL images consistent and fully visible */
+        aspect-ratio: 16 / 10;
         width: 100%;
         height: auto;
         transform-style: preserve-3d;
@@ -826,18 +817,19 @@
         pointer-events: none;
     }
 
-    /* Styles to force full image display inside container */
+    /* FULL IMAGE DISPLAY — object-fit: contain shows entire image without cropping */
     .portfolio-content .row img {
         width: 100%;
         height: 100%;
         display: block;
-        object-fit: cover;
-        object-position: top;
+        object-fit: contain;   /* <-- THIS SHOWS THE ENTIRE IMAGE */
+        object-position: center;
+        background: rgba(0, 0, 0, 0.25); /* subtle background for letterboxing */
         transition: transform 0.45s ease, filter 0.45s ease;
         opacity: 0.95;
+        padding: 6px; /* tiny breathing room for the image */
     }
 
-    /* Overlay Styling */
     .portfolio-content .layer {
         width: 100%;
         height: 0;
@@ -893,7 +885,6 @@
         background: var(--text);
     }
 
-    /* Hover Effects */
     .portfolio-content .row:hover {
         transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
         border-color: var(--primary);
@@ -901,7 +892,7 @@
     }
 
     .portfolio-content .row:hover img {
-        transform: scale(1.06);
+        transform: scale(1.04);
         filter: saturate(1.05);
     }
 
@@ -920,7 +911,7 @@
     }
     
     .portfolio-content .row:hover .layer a {
-        transition-delay: 0.1s; /* Stagger effect */
+        transition-delay: 0.1s;
     }
 
     @keyframes portfolioReveal {
@@ -1020,7 +1011,6 @@
         box-shadow: 0 0 20px #0ef;
     }
 
-    /* Contact Form */
     .contact-form {
         flex: 1;
         min-width: 280px;
@@ -1066,7 +1056,6 @@
         box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan;
     }
 
-    /* Responsive Design for Contact Section */
     @media (max-width: 768px) {
         .contact {
             flex-direction: column;
@@ -1150,18 +1139,11 @@
         100% { transform: translateY(0); opacity: 1; }
     }
 
-    @keyframes floatImage {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
-        100% { transform: translateY(0); }
-    }
-
     @keyframes bottomGlow {
         0%, 100% { filter: drop-shadow(0 20px 25px rgba(0, 238, 255, 0.6)); }
         50% { filter: drop-shadow(0 20px 45px rgba(0, 238, 255, 1)); }
     }
 
-    /* Scroll Animation */
     .scroll-animate {
         opacity: 0;
         transform: translateY(30px);
@@ -1173,11 +1155,9 @@
         transform: translateY(0);
     }
 
-    /* Responsive Design - UPDATED */
     @media (max-width: 1200px) {
         .home-content h1 { font-size: 48px; }
         .about, .skills-container { gap: 30px; }
-        /* Ensure portfolio grid stays responsive */
         .portfolio-wrapper { gap: 20px; }
     }
 
@@ -1198,11 +1178,10 @@
         .sub-title, .skills-title, .main-text h2 { font-size: 40px; }
         .about-text h2 { font-size: 40px; }
         
-        /* Mobile Portfolio Adjustments */
         .portfolio-wrapper { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
         .services-list { grid-template-columns: 1fr; }
         .radial-container { grid-template-columns: 1fr; }
-        .portfolio-content .row { aspect-ratio: 16/11; }
+        .portfolio-content .row { aspect-ratio: 16 / 11; }
         .portfolio-content .row:hover { transform: translateY(-6px); }
     }
 
@@ -1230,9 +1209,9 @@
         
         .portfolio, .services, .skills-section, .about, .contact { padding: 60px 5%; }
         .services-list div { padding: 30px 20px; }
+        .portfolio-wrapper { grid-template-columns: 1fr; } /* single column on very small phones */
     }
 
-    /* ADDED: enhanced skill bars for new techs */
     .technical-bars .bar i.bxl-firebase { color: #FFCA28; }
     .technical-bars .bar i.bxl-git { color: #F1502F; }
     .technical-bars .bar i.bxl-bootstrap { color: #7952B3; }
@@ -1248,7 +1227,6 @@
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- Header with Your Original Navigation Code -->
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
         
@@ -1268,7 +1246,6 @@
         </nav>
     </header>
     
-    <!-- Home Section -->
     <section class="home" id="home">
         <div class="home-container">
             <div class="main-image">
@@ -1282,74 +1259,64 @@
                     <br>expertise is to create and website design, Frontend design and Backend development, and many
                     more....
                 </p>
-<div class="home-sci">
-    <a style="--i:7"><i class='bx bxl-facebook'></i></a>
-    <a href="https://www.linkedin.com/in/antokochumon/" target="_blank" style="--i:8"><i class='bx bxl-linkedin'></i></a>
-    <a href="https://wa.me/447407266345" target="_blank" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
-    <a style="--i:10"><i class='bx bxl-twitter'></i></a>
-</div>
+                <div class="home-sci">
+                    <a style="--i:7"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.linkedin.com/in/antokochumon/" target="_blank" style="--i:8"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://wa.me/447407266345" target="_blank" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
+                    <a style="--i:10"><i class='bx bxl-twitter'></i></a>
+                </div>
                 <a class="btn-box" href="https://drive.google.com/file/d/1Reg0Ve7-dEdBCMwhtJdJc1lFeQpTRVsh/view" target="_blank" rel="noopener noreferrer">More About Me</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="about-img scroll-animate">
             <img src="image/anto image1.png" alt="Anto Kochumon">
         </div>
         <div class="about-text scroll-animate">
-<h2>About <span>Me</span></h2>
-<h4>Full Stack Developer</h4>
-<p>
-  Hi, I'm <strong>Anto Kochumon</strong> — a passionate and self-taught <strong>Full Stack Developer</strong> with a deep love for technology and building meaningful digital experiences.  
-  I specialize in <strong>HTML, CSS, JavaScript, jQuery, Bootstrap</strong>, and the <strong>MERN Stack</strong> (MongoDB, Express.js, React, Node.js).  
-  Over time, I’ve honed my skills in creating <strong>modern, responsive, and user-friendly websites</strong> that combine clean design with powerful functionality.  
-  I’m also familiar with <strong>Git and version control</strong>, allowing me to collaborate effectively and manage projects efficiently.  
-  <br><br>
-  My journey as a developer has been fueled by curiosity, dedication, and the drive to continuously learn new technologies.  
-  Whether it’s crafting beautiful frontends or building robust backends, I love turning ideas into reality through code and innovation.
-</p>
-
+            <h2>About <span>Me</span></h2>
+            <h4>Full Stack Developer</h4>
+            <p>
+                Hi, I'm <strong>Anto Kochumon</strong> — a passionate and self-taught <strong>Full Stack Developer</strong> with a deep love for technology and building meaningful digital experiences.  
+                I specialize in <strong>HTML, CSS, JavaScript, jQuery, Bootstrap</strong>, and the <strong>MERN Stack</strong> (MongoDB, Express.js, React, Node.js).  
+                Over time, I’ve honed my skills in creating <strong>modern, responsive, and user-friendly websites</strong> that combine clean design with powerful functionality.  
+                I’m also familiar with <strong>Git and version control</strong>, allowing me to collaborate effectively and manage projects efficiently.  
+                <br><br>
+                My journey as a developer has been fueled by curiosity, dedication, and the drive to continuously learn new technologies.  
+                Whether it’s crafting beautiful frontends or building robust backends, I love turning ideas into reality through code and innovation.
+            </p>
             <a href="https://drive.google.com/file/d/1Reg0Ve7-dEdBCMwhtJdJc1lFeQpTRVsh/view" target="_blank" rel="noopener noreferrer" class="btn-box">More About Me</a>
         </div>
     </section>
 
-    <!-- Services Section -->
-<section class="services" id="services">
-    <h1 class="sub-title scroll-animate">My <span>Services</span></h1>
-    <div class="services-list">
-        <!-- Box 1 -->
-        <div class="scroll-animate">
-            <i class='bx bx-code-alt'></i>
-            <h2>Static Web Development</h2>
-            <p>I create stunning, responsive, and fast-loading <b>static websites</b> using <b>HTML, CSS, JavaScript, Bootstrap, and jQuery</b>. Whether it's a personal portfolio, business landing page, or product showcase, I ensure a modern design that looks perfect on all devices. Every site is optimized for speed, performance, and smooth user experience.</p>
-            <a href="#" class="read">Learn more</a>
+    <section class="services" id="services">
+        <h1 class="sub-title scroll-animate">My <span>Services</span></h1>
+        <div class="services-list">
+            <div class="scroll-animate">
+                <i class='bx bx-code-alt'></i>
+                <h2>Static Web Development</h2>
+                <p>I create stunning, responsive, and fast-loading <b>static websites</b> using <b>HTML, CSS, JavaScript, Bootstrap, and jQuery</b>. Whether it's a personal portfolio, business landing page, or product showcase, I ensure a modern design that looks perfect on all devices. Every site is optimized for speed, performance, and smooth user experience.</p>
+                <a href="#" class="read">Learn more</a>
+            </div>
+            <div class="scroll-animate">
+                <i class='bx bx-layer'></i>
+                <h2>Dynamic Website Development</h2>
+                <p>I develop fully functional and responsive <b>dynamic websites</b> such as <b>e-commerce stores, shopping platforms, admin panels, and blogs</b> using <b>Firebase or the MERN Stack</b>. I focus on creating interactive, scalable, and secure web experiences that include real-time features, authentication, and seamless database integration.</p>
+                <a href="#" class="read">Learn more</a>
+            </div>
+            <div class="scroll-animate">
+                <i class='bx bx-window-alt'></i>
+                <h2>Web App Development</h2>
+                <p>I build modern and responsive <b>web applications</b> using <b>HTML, CSS, JavaScript</b> along with <b>Firebase or the MERN Stack</b>. From task managers to dashboards and custom tools, I deliver high-performing, user-friendly apps with smooth functionality, real-time updates, and a professional UI tailored to your business needs.</p>
+                <a href="#" class="read">Learn more</a>
+            </div>
         </div>
+    </section>
 
-        <!-- Box 2 -->
-        <div class="scroll-animate">
-            <i class='bx bx-layer'></i>
-            <h2>Dynamic Website Development</h2>
-            <p>I develop fully functional and responsive <b>dynamic websites</b> such as <b>e-commerce stores, shopping platforms, admin panels, and blogs</b> using <b>Firebase or the MERN Stack</b>. I focus on creating interactive, scalable, and secure web experiences that include real-time features, authentication, and seamless database integration.</p>
-            <a href="#" class="read">Learn more</a>
-        </div>
-
-        <!-- Box 3 -->
-        <div class="scroll-animate">
-            <i class='bx bx-window-alt'></i>
-            <h2>Web App Development</h2>
-            <p>I build modern and responsive <b>web applications</b> using <b>HTML, CSS, JavaScript</b> along with <b>Firebase or the MERN Stack</b>. From task managers to dashboards and custom tools, I deliver high-performing, user-friendly apps with smooth functionality, real-time updates, and a professional UI tailored to your business needs.</p>
-            <a href="#" class="read">Learn more</a>
-        </div>
-    </div>
-</section>
-
-    <!-- Skills Section -->
     <section class="skills-section" id="Skills">
         <h1 class="skills-title scroll-animate">My <span>Skills</span></h1>
         <div class="skills-container">
-            <!-- Technical Skills -->
             <div class="technical-skills scroll-animate">
                 <h1 class="heading1">Technical Skills</h1>
                 <div class="technical-bars">
@@ -1358,92 +1325,76 @@
                         <div class="info"><span>HTML</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-css3' style='color:#0098f0'></i>
                         <div class="info"><span>CSS</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-javascript' style='color:#b0bc1e'></i>
                         <div class="info"><span>JavaScript</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-mongodb' style='color:#04ff00'></i>
                         <div class="info"><span>MongoDB</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-nodejs' style='color:#00ff5e'></i>
                         <div class="info"><span>Express.js</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-react' style='color:#69bcbc'></i>
                         <div class="info"><span>React</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-nodejs' style='color:#09ff00'></i>
                         <div class="info"><span>Node.js</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
-                    <!-- NEW SKILLS ADDED HERE with 100% -->
                     <div class="bar">
                         <i class='bx bxl-firebase' style='color:#FFCA28'></i>
                         <div class="info"><span>Firebase</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-git' style='color:#F1502F'></i>
                         <div class="info"><span>Git & GitHub</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-bootstrap' style='color:#7952B3'></i>
                         <div class="info"><span>Bootstrap</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-python' style='color:#3776AB'></i>
                         <div class="info"><span>Python</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bxl-tailwind-css' style='color:#38B2AC'></i>
                         <div class="info"><span>Tailwind CSS</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bx-data' style='color:#00BFFF'></i>
                         <div class="info"><span>Data Annotation (Image/Audio/Video)</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bx-brain' style='color:#FF6B6B'></i>
                         <div class="info"><span>AI Training & Evaluation</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bx-bot' style='color:#A855F7'></i>
                         <div class="info"><span>AI Assisted Programming</span><span>100%</span></div>
                         <div class="progress-line"><span data-width="100"></span></div>
                     </div>
-
                     <div class="bar">
                         <i class='bx bx-cube' style='color:#FFD700'></i>
                         <div class="info"><span>Three.js</span><span>100%</span></div>
@@ -1452,7 +1403,6 @@
                 </div>
             </div>
 
-            <!-- Professional Skills -->
             <div class="professional-skills scroll-animate">
                 <h1 class="heading1">Professional Skills</h1>
                 <div class="radial-container">
@@ -1464,7 +1414,6 @@
                         <div class="percentage">100%</div>
                         <div class="text">Creativity</div>
                     </div>
-
                     <div class="radial-bar">
                         <svg>
                             <circle class="progress-bg" cx="75" cy="75" r="70"></circle>
@@ -1473,7 +1422,6 @@
                         <div class="percentage">100%</div>
                         <div class="text">Communication</div>
                     </div>
-
                     <div class="radial-bar">
                         <svg>
                             <circle class="progress-bg" cx="75" cy="75" r="70"></circle>
@@ -1482,7 +1430,6 @@
                         <div class="percentage">100%</div>
                         <div class="text">Problem Solving</div>
                     </div>
-
                     <div class="radial-bar">
                         <svg>
                             <circle class="progress-bg" cx="75" cy="75" r="70"></circle>
@@ -1496,7 +1443,7 @@
         </div>
     </section>
 
- <!-- Portfolio Section with Modern Styling & Full Images -->
+    <!-- PORTFOLIO SECTION — ALL IMAGES FULLY VISIBLE, FULLY RESPONSIVE -->
     <section class="portfolio" id="portfolio">
         <div class="main-text">
             <h2 class="scroll-animate">Latest&nbsp;<span>Projects</span></h2>
@@ -1504,7 +1451,7 @@
 
                 <div class="portfolio-content scroll-animate">
                     <div class="row">
-                        <img src="image/job.png" alt="sponsorshipjobuk>
+                        <img src="image/job.png" alt="sponsorshipjobuk">
                         <div class="layer">
                             <h5>Sponsorship Job Uk - Website</h5>
                             <a href="https://sponsorshipjobuk.co.uk/"><i class="bx bx-link-external"></i></a>
@@ -1512,8 +1459,6 @@
                     </div>
                 </div>
 
-
-        <!-- NEW PROJECT ADDED with updated image path -->
                 <div class="portfolio-content scroll-animate">
                     <div class="row">
                         <img src="image/pdfimagera.png" alt="PDFImagera - all in one pdf tool">
@@ -1554,8 +1499,6 @@
                     </div>
                 </div>
 
-                
-                
                 <div class="portfolio-content scroll-animate">
                     <div class="row">
                         <img src="image/ck_tech.png" alt="CK Tech">
@@ -1636,13 +1579,10 @@
                     </div>
                 </div>
 
-
-                
             </div>
         </div>
     </section>
 
-    <!-- YOUR ORIGINAL CONTACT SECTION - PRESERVED EXACTLY -->
     <section class="contact" id="contact">
         <div class="contact-text">
             <h2>Contact <span>Me</span></h2>
@@ -1652,12 +1592,12 @@
                 <li><i class='bx bxs-send'></i> antokochumon2@gamil.com</li>
                 <li><i class='bx bxs-phone'></i> 07407266345</li>
             </div>
-<div class="contact-icons">
-    <a><i class='bx bxl-facebook-circle'></i></a>
-    <a><i class='bx bxl-twitter'></i></a>
-    <a href="https://www.linkedin.com/in/antokochumon/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-    <a href="https://wa.me/447407266345" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-</div>
+            <div class="contact-icons">
+                <a><i class='bx bxl-facebook-circle'></i></a>
+                <a><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.linkedin.com/in/antokochumon/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://wa.me/447407266345" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+            </div>
         </div>
 
         <div class="contact-form">
@@ -1672,14 +1612,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <div class="last-text">
         <p>Designed and Developed by Anto Kochumon © 2025</p>
     </div>
     <a href="#" class="top"><i class='bx bxs-up-arrow-alt'></i></a>
 
     <script>
-        // Typed.js initialization
         var typed = new Typed(".text", {
             strings: ["Fullstack Developer", "Web Developer"],
             typeSpeed: 100,
@@ -1688,7 +1626,6 @@
             loop: true
         });
 
-        // Custom cursor
         (function() {
             const hasFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
             const dot = document.getElementById("cursorDot");
@@ -1752,12 +1689,10 @@
             animateRing();
         })();
 
-        // Mobile menu toggle - BASED ON YOUR OLD CODE
         document.getElementById('hamburger').addEventListener('click', function() {
             this.classList.toggle('active');
             document.getElementById('navbar').classList.toggle('active');
             
-            // Toggle hamburger to X
             const spans = this.querySelectorAll('span');
             if (this.classList.contains('active')) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -1771,14 +1706,12 @@
             }
         });
 
-        // Close menu when clicking on a link (for mobile) - BASED ON YOUR OLD CODE
         document.querySelectorAll('.navbar a').forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
                     document.getElementById('hamburger').classList.remove('active');
                     document.getElementById('navbar').classList.remove('active');
                     
-                    // Reset hamburger icon
                     const spans = document.querySelectorAll('.hamburger span');
                     spans.forEach(span => {
                         span.style.transform = '';
@@ -1788,7 +1721,6 @@
             });
         });
 
-        // Scroll animation
         function checkScroll() {
             const elements = document.querySelectorAll('.scroll-animate');
             
@@ -1802,7 +1734,6 @@
             });
         }
 
-        // Animate skill bars on scroll
         function animateSkills() {
             const skillBars = document.querySelectorAll('.progress-line span');
             const radialBars = document.querySelectorAll('.progress-fill');
@@ -1835,13 +1766,11 @@
             );
         }
 
-        // Initial check on page load
         window.addEventListener('load', () => {
             checkScroll();
             animateSkills();
         });
         
-        // Check on scroll
         window.addEventListener('scroll', () => {
             checkScroll();
             animateSkills();
@@ -1849,11 +1778,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
