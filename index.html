@@ -105,7 +105,7 @@
     }
 
     /* ------------------------------------------- */
-    /* UPDATED RESPONSIVE & ATTRACTIVE NAVBAR CSS */
+    /* NAVBAR */
     /* ------------------------------------------- */
     .header {
         position: fixed;
@@ -412,7 +412,9 @@
         animation: bottomGlow 2.5s ease-in-out infinite;
     }
 
-    /* About Section */
+    /* ------------------------------------------- */
+    /* ABOUT SECTION — IMAGE GLOW EFFECT           */
+    /* ------------------------------------------- */
     .about {
         padding: 100px 10%;
         display: grid;
@@ -423,14 +425,40 @@
 
     .about-img {
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .about-img img {
-        padding-bottom: 20%;
-        max-width: 590px;
+        position: relative;
+        z-index: 2;
+        max-width: 100%;
         height: auto;
         width: 100%;
-        border-radius: 8px;
+        border-radius: 50%; /* Keeps your image circular */
+        display: block;
+        
+        /* New modern glowing animation applied directly to the image */
+        filter: drop-shadow(0 0 10px rgba(0, 238, 255, 0.4)) drop-shadow(0 0 25px rgba(0, 238, 255, 0.2));
+        animation: imageGlowPulse 3s ease-in-out infinite alternate;
+        transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    /* Hover effect for the image */
+    .about-img img:hover {
+        transform: scale(1.02);
+        filter: drop-shadow(0 0 20px rgba(0, 238, 255, 0.8)) drop-shadow(0 0 40px rgba(0, 238, 255, 0.5));
+    }
+
+    /* Keyframes for the glowing pulse effect */
+    @keyframes imageGlowPulse {
+        0% {
+            filter: drop-shadow(0 0 8px rgba(0, 238, 255, 0.3)) drop-shadow(0 0 20px rgba(0, 238, 255, 0.1));
+        }
+        100% {
+            filter: drop-shadow(0 0 18px rgba(0, 238, 255, 0.7)) drop-shadow(0 0 35px rgba(0, 238, 255, 0.4));
+        }
     }
 
     .about-text h2 {
@@ -690,7 +718,7 @@
     }
 
     /* ------------------------------------------- */
-    /* PORTFOLIO SECTION — RESPONSIVE GRID, FULL IMAGES, NO CROPPING */
+    /* PORTFOLIO SECTION */
     /* ------------------------------------------- */
     .portfolio {
         padding: 100px 10%;
@@ -745,7 +773,6 @@
         text-shadow: 0 0 15px rgba(0, 238, 255, 0.4);
     }
 
-    /* RESPONSIVE GRID - uses auto-fit with minmax for perfect wrapping */
     .portfolio-wrapper {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -757,7 +784,7 @@
 
     .portfolio-content {
         width: 100%;
-        min-width: 0; /* prevents overflow in grid */
+        min-width: 0;
     }
 
     .portfolio-content.scroll-animate.animate .row {
@@ -787,7 +814,6 @@
         transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         background: linear-gradient(160deg, rgba(8, 27, 41, 0.95), rgba(11, 39, 58, 0.85));
         backdrop-filter: blur(8px);
-        /* Fixed aspect ratio keeps ALL images consistent and fully visible */
         aspect-ratio: 16 / 10;
         width: 100%;
         height: auto;
@@ -817,17 +843,16 @@
         pointer-events: none;
     }
 
-    /* FULL IMAGE DISPLAY — object-fit: contain shows entire image without cropping */
     .portfolio-content .row img {
         width: 100%;
         height: 100%;
         display: block;
-        object-fit: contain;   /* <-- THIS SHOWS THE ENTIRE IMAGE */
+        object-fit: contain;
         object-position: center;
-        background: rgba(0, 0, 0, 0.25); /* subtle background for letterboxing */
+        background: rgba(0, 0, 0, 0.25);
         transition: transform 0.45s ease, filter 0.45s ease;
         opacity: 0.95;
-        padding: 6px; /* tiny breathing room for the image */
+        padding: 6px;
     }
 
     .portfolio-content .layer {
@@ -1188,7 +1213,8 @@
     @media (prefers-reduced-motion: reduce) {
         .portfolio::before,
         .portfolio::after,
-        .portfolio-content.scroll-animate.animate .row {
+        .portfolio-content.scroll-animate.animate .row,
+        .about-img img {
             animation: none;
         }
         .portfolio-content .row,
@@ -1209,7 +1235,7 @@
         
         .portfolio, .services, .skills-section, .about, .contact { padding: 60px 5%; }
         .services-list div { padding: 30px 20px; }
-        .portfolio-wrapper { grid-template-columns: 1fr; } /* single column on very small phones */
+        .portfolio-wrapper { grid-template-columns: 1fr; }
     }
 
     .technical-bars .bar i.bxl-firebase { color: #FFCA28; }
@@ -1270,6 +1296,7 @@
         </div>
     </section>
 
+    <!-- ABOUT SECTION WITH GLOWING IMAGE -->
     <section class="about" id="about">
         <div class="about-img scroll-animate">
             <img src="image/anto image1.png" alt="Anto Kochumon">
@@ -1443,7 +1470,7 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION — ALL IMAGES FULLY VISIBLE, FULLY RESPONSIVE -->
+    <!-- PORTFOLIO SECTION -->
     <section class="portfolio" id="portfolio">
         <div class="main-text">
             <h2 class="scroll-animate">Latest&nbsp;<span>Projects</span></h2>
